@@ -1,4 +1,5 @@
 import React from "react";
+import Message from "./Message";
 
 const Person = (props) => {
   console.log(props);
@@ -12,6 +13,7 @@ const Person = (props) => {
 
       <img src={img} alt="" />
       <p>{tel} </p>
+      <Message isim={name} />
     </div>
   );
 };
