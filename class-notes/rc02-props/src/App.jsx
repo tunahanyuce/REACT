@@ -1,34 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+import Person from './Person';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+const people = [
+  {
+    name: "Osman Kara",
+    img: "https://cdn.pixabay.com/photo/2017/08/01/01/33/beanie-2562646__480.jpg",
+    tel: "555 55 55",
+  },
+  {
+    name: "Ayşe Güler",
+    img: "https://cdn.pixabay.com/photo/2020/10/19/09/44/woman-5667299_1280.jpg",
+    tel: "555 55 55",
+  },
+];
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+     <Person kisi={people[0]}/>
+     <Person kisi={people[1]}/>
+
+
+
+    </div>
   )
 }
 
