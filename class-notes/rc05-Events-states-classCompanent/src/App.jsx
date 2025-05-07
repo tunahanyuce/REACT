@@ -1,4 +1,6 @@
 import './App.css'
+import Events from './components/events/Events'
+import UseStateHook from './components/useStateHook/UseStateHook';
 
 function App() {
 
@@ -9,8 +11,12 @@ function App() {
 
   return (
     <>
-      <h1 className='bg-danger'>React Events</h1>
-      <button onClick={selamla()}>TIKLA</button>
+    <div className='bg-warning text-center p-3'>
+    <h1> React Events</h1>
+    {/* <Events/> */}
+    <UseStateHook/>
+    </div>
+    
     </>
   )
 }
