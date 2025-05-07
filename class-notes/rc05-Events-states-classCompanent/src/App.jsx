@@ -1,6 +1,8 @@
 import './App.css'
 import Events from './components/events/Events'
 import UseStateHook from './components/useStateHook/UseStateHook';
+import MoreData from './components/useStateHook/MoreData';
+import ClassComponent from './components/class-component/ClassComponent';
 
 function App() {
 
@@ -14,7 +16,10 @@ function App() {
     <div className='bg-warning text-center p-3'>
     <h1> React Events</h1>
     {/* <Events/> */}
-    <UseStateHook/>
+    {/* <UseStateHook/> */}
+    {/* <MoreData/>   */}
+
+    <ClassComponent/>
     </div>
     
     </>

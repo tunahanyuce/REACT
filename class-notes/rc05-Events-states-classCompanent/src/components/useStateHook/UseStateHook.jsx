@@ -27,9 +27,9 @@ const UseStateHook = () => {
   const arttir = () => {
     setCounter(counter + 1);
 
-    if (counter >= 10) {
-      setCounter(0);
-    }
+    //    if (counter>=10){
+    //     setCounter(0)
+    //    }
   };
 
   return (
@@ -37,14 +37,17 @@ const UseStateHook = () => {
       <h1>USESTATE HOOK</h1>
       <h3>Counter:{counter}</h3>
       <button className="btn btn-primary m-2" onClick={arttir}>
-        Arttır
+        ☝
+      </button>
+      <button className="btn btn-primary m-2" onClick={() => setCounter(0)}>
+        Sıfırla
       </button>
 
       <button
         className="btn btn-primary m-2"
         onClick={() => setCounter(counter - 1)}
       >
-        Azalt
+        👇
       </button>
     </div>
   );
