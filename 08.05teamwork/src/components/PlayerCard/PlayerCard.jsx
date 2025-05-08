@@ -1,16 +1,20 @@
 import React from 'react'
 
-import "./Header.scss"
-import NBALogo from "../../assets/images/nba-logo.png"
+import "./PlayerCard.scss"
+import { useState } from 'react'
 
-const Header = ({setSearchPlayer}) => {
+const PlayerCard = ({player}) => {
+
+  const [visible,setVisible] = useState(true)
   return (
-    <header>
-        <img src={NBALogo} alt="" />
-        <h1>NBA Legends</h1>
-        <input type="search" placeholder='Search Player' onChange={(e)=>setSearchPlayer(e.target.value)}/>
-    </header>
+    <div className='player-card' onClick={()=>setVisible(!visible)}>
+    {visible ? (<img src={player.img} alt="" />) : (<div className="statistics">
+          {player.statistics.map((statistic,index)=><p key={index}>🏀 {statistic}</p>
+          )}
+        </div>)}
+        <h4>{player.name}</h4>
+    </div>
   )
 }
 
-export default Header
+export default PlayerCard

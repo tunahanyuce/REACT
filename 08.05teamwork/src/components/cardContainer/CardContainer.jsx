@@ -1,19 +1,26 @@
 import React from 'react'
-import "./PlayerCard.scss"
-import { useState } from 'react'
+import PlayerCard from '../playerCard/PlayerCard';
 
-const PlayerCard = ({player}) => {
+import "./CardContainer.scss"
 
-  const [visible,setVisible] = useState(true)
+const CardContainer = ({data,searchPlayer}) => {
+
+  const filteredData =  searchPlayer.trim()==='' ? data : data.filter(player=>player.name.toLowerCase().includes(searchPlayer.trim().toLowerCase()))
+
   return (
-    <div className='player-card' onClick={()=>setVisible(!visible)}>
-    {visible ? (<img src={player.img} alt="" />) : (<div className="statistics">
-          {player.statistics.map((statistic,index)=><p key={index}>🏀 {statistic}</p>
-          )}
-        </div>)}
-        <h4>{player.name}</h4>
-    </div>
+    <main>
+
+      <div className="cards">
+        {filteredData.length>0 ?(
+          filteredData.map((player,index)=>
+            <PlayerCard player={player} key={index}/>
+          )
+        ): (<h3> No Player Found. Please ensure you're typing the correct name.</h3>)
+        }
+      </div>
+      
+    </main>
   )
 }
 
-export default PlayerCard
+export default CardContainer
