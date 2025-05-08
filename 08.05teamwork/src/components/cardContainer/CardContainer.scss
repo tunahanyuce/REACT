@@ -1,0 +1,15 @@
+main{
+    width: 80%;
+    margin: 30px auto;
+    border-radius: 20px;
+    background-image: url("https://4kwallpapers.com/images/wallpapers/nba-logo-basketball-3840x2160-17381.png");
+    background-size: cover;
+
+    .cards{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap:30px;
+        padding: 20px;
+    }
+}

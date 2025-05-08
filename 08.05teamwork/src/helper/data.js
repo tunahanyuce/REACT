@@ -1,7 +1,7 @@
 export const data = [
   {
     name: "Kareem Abdul-Jabbar",
-    img: "https://s22928.pcdn.co/wp-content/uploads/2018/03/Kareem-Abdul-Jabbar.jpg",
+    img:"https://www.dispatch.com/gcdn/authoring/2017/05/04/NCOD/ghows-OH-4dec7f66-1ca7-3c05-e053-0100007f6300-613b1ee5.jpeg",
     statistics: [
       "38,387 points",
       "17,440 rebaunds",
@@ -11,7 +11,7 @@ export const data = [
   },
   {
     name: "Larry Bird",
-    img: "https://images.footballfanatics.com/boston-celtics/larry-bird-boston-celtics-unsigned-driving-to-the-basket-photograph_pi4025000_ff_4025713-3a32778de9bb567994e1_full.jpg?_hv=2&w=900",
+    img: "https://pcsblobstrg.blob.core.windows.net/storagemedia/1/mastercatalog/attributeimages/nbabird14-_1.jpg",
     statistics: [
       "21,791 points",
       "8,974 rebaunds",

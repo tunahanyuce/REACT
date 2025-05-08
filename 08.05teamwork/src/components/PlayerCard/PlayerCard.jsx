@@ -1,18 +1,16 @@
-import React from "react";
-import "./PlayerCard.scss";
+import React from 'react'
 
-const PlayerCard = ({ player }) => {
+import "./Header.scss"
+import NBALogo from "../../assets/images/nba-logo.png"
+
+const Header = ({setSearchPlayer}) => {
   return (
-    <div className="player-card">
-      <img src={(player, img)} alt="" width="200px" />
-      <div className="statistics">
-        {player.statistics.map((statistics, index) => (
-          <p key={index}> 🏀{statistics}</p>
-        ))}
-      </div>
-      <h4>{player.name}</h4>
-    </div>
-  );
-};
+    <header>
+        <img src={NBALogo} alt="" />
+        <h1>NBA Legends</h1>
+        <input type="search" placeholder='Search Player' onChange={(e)=>setSearchPlayer(e.target.value)}/>
+    </header>
+  )
+}
 
-export default PlayerCard;
+export default Header

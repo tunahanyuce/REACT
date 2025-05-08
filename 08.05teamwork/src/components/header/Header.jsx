@@ -1,12 +1,14 @@
 import React from 'react'
-import "./Header.scss"
-import ""NBALogo from "../../assets/image/nba-logo.png"
-import {data} from 
 
-const Header = () => {
+import "./Header.scss"
+import NBALogo from "../../assets/images/nba-logo.png"
+
+const Header = ({setSearchPlayer}) => {
   return (
     <header>
-      <img src="" alt="" />
+        <img src={NBALogo} alt="" />
+        <h1>NBA Legends</h1>
+        <input type="search" placeholder='Search Player' onChange={(e)=>setSearchPlayer(e.target.value)}/>
     </header>
   )
 }

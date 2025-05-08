@@ -1,8 +1,10 @@
+import { useState } from "react";
+
 import Header from "./components/header/Header";
 import CardContainer from "./components/cardContainer/CardContainer";
-import { useState } from "react";
-import { data } from "./helper/data.js";
+
 import "./App.scss";
+import { data } from "./helper/data";
 
 function App() {
   const [searchPlayer, setSearchPlayer] = useState("");
@@ -10,7 +12,7 @@ function App() {
   return (
     <>
       <Header setSearchPlayer={setSearchPlayer} />
-      <CardContainer data={data} searchPlayer={searchPlayer} />
+      <CardContainer searchPlayer={searchPlayer} data={data} />
     </>
   );
 }
