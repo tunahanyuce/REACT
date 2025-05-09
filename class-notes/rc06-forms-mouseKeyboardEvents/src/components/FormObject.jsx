@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 
 const FormObject = () => {
-    const[bilgi,setBilgi]=useState("")
+    const[bilgi,setBilgi]=useState({name:"", password:"", country: ""});
+
+    const{name,sappword,country}=bilgi
   return (
      <div className="mt-4 p-3">
       <div className="text-center">
@@ -14,7 +16,7 @@ const FormObject = () => {
             Name: <span className="text-danger">{} </span>
           </label>
           <input
-          
+          onChange={(e)=>setBilgi()}
 
             type="text"
             className="form-control"

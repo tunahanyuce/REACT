@@ -6,29 +6,25 @@ const[pass,setPass]=useState("")
 const[date,setDate]=useState("")
 const[country,setCountry]=useState("")
 
+
 const gonder=(e)=>{
-    e.preventDefault()   //? submit eventi'nin doğal davranışını engelle(beklet)
-   // database e yolla
-   //* ileride bir submit islemin neticesinde verilerin nasıl post edilebileceğini gostermek adina eklenmistir.
-    //? axios.post(url, {name,password,country})
+  e.preventDefault(); //? submit eventi'nin doğal davranışını engelle(beklet)
+  // database e yolla
+  //* ileride bir submit islemin neticesinde verilerin nasıl post edilebileceğini gostermek adina eklenmistir.
+  //? axios.post(url, {name,password,country})
 
-     alert(`isim:${name}
-         password:${pass}
-         tarih:${date}
-         ülke:${country}
-         `
-        );
+  alert(`isim:${name}
+    password:${pass}
+    tarih:${date}
+    ülke:${country}
+    `);
 
-
-        //? eğer input değerlerini state'e bağlı olarak kontrol etmek istersek inputların value proplarına state'leri bağlamamız gerekir. bu duruma kontrolsüz komponentten kontrollü komponente çevirme denir.
-
-        setName("")
-        setPass("")
-        setDate("")
-        setCountry("")
-    
+  //? eğer input değerlerini state'e bağlı olarak kontrol etmek istersek inputların value proplarına state'leri bağlamamız gerekir. bu duruma kontrolsüz komponentten kontrollü komponente çevirme denir.
+  setName("");
+  setPass("");
+  setDate("");
+  setCountry("");
 }
-
 
   return (
     <div className="mt-4 p-3">
@@ -47,15 +43,14 @@ const gonder=(e)=>{
             type="text"
             className="form-control"
             id="name"
-            value={name}
-      
+      value={name}
             //* required alanların çalışması için formları onSubmit ile göndermeliyiz. onClick ile gönderdiğimizde çalışmaz
             required
           />
         </div>
         <div className="mb-3">
           <label htmlFor="password" className="form-label">
-            Password: <span className="text-danger">{} </span>
+            Password: <span className="text-danger">{pass} </span>
           </label>
           <input
             type="password"
@@ -103,8 +98,7 @@ const gonder=(e)=>{
         </button>
       </form>
     </div>
-    
-  )
+  );
 }
 
 export default FormEvents
