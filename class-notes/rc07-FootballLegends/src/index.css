@@ -19,8 +19,9 @@ body{
   padding:10px;
   border-radius: 1rem;
 }
+
 .card-container{
-  /* background-color: rgb(18, 17, 17,0.5); */
+  /* background-color: rgba(18, 17, 17,0.5); */
   background-color: white;
   min-height: 350px;
 }
