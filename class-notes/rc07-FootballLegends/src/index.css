@@ -1,0 +1,26 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url("./assets/bg-image.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title{
+  /* border:1px solid red; */
+  background-color: rgba(226, 221, 221,0.5);
+  padding:10px;
+  border-radius: 1rem;
+}
+.card-container{
+  /* background-color: rgb(18, 17, 17,0.5); */
+  background-color: white;
+  min-height: 350px;
+}
