@@ -22,7 +22,7 @@ class LifeCycleMethods extends React.Component {
     super();
 
     this.state = {
-      count: 0,
+      count:  0,
     };
   }
 

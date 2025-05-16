@@ -2,6 +2,8 @@ import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 import LifeCycleMethods from './LifeCycleMethods'
 import { useState } from 'react';
+import Clock from './Clock';
+import People from './useEffect-fetch-axios/People';
 
 function App() {
 
@@ -10,9 +12,15 @@ function App() {
 
   return (
     <div className="container text-center mt-4">
-      <button onClick={()=>setShow(!show)} className="btn btn-danger">SHOW</button>
+      <button onClick={() => setShow(!show)} className="btn btn-danger">
+        SHOW
+      </button>
 
-      {show && <LifeCycleMethods />}
+      {/* {show && <LifeCycleMethods />} */}
+
+      {/* {show && <Clock />} */}
+
+      <People/>
     </div>
   );
 }
