@@ -1,74 +1,69 @@
-export const appointmentData = [
+export const hastaData = [
   {
     id: 1,
-    patient: "Barry Vermont",
-    day: new Date(),
-    consulted: true,
-    doctor: "Dr. Hazel Valery",
+    patientName: "Yavuz Selim",
+    day: "Dec 12th at 2:30pm",
+    isDone: false,
+    myDoctor: "DR Ayse Okur",
   },
   {
     id: 2,
-    patient: "Harry Coming",
-    day: new Date(),
-    consulted: false,
-    doctor: "Dr. Jessica White",
+    patientName: "Mihrimah Sultan",
+    day: "Dec 13th at 1:30pm",
+    isDone: true,
+    myDoctor: "DR Fatma Adil",
   },
   {
     id: 3,
-    patient: "Aaron Black",
-    day: new Date(),
-    consulted: true,
-    doctor: "Dr. Jasmine Carpanter",
+    patientName: "Fatih Mehmet",
+    day: "Dec 14th at 3:00pm",
+    isDone: false,
+    myDoctor: "DR Oya Başar",
   },
-]
+  {
+    id: 4,
+    patientName: "İpek Bilir",
+    day: "Dec 12th at 2:30pm",
+    isDone: false,
+    myDoctor: "DR Ahmet Bilen",
+  },
+  {
+    id: 5,
+    patientName: "Haluk Yilmaz",
+    day: "Dec 13th at 1:30pm",
+    isDone: true,
+    myDoctor: "DR Ahmet Bilen",
+  },
+  {
+    id: 6,
+    patientName: "Ayşe Güler",
+    day: "Dec 14th at 3:00pm",
+    isDone: false,
+    myDoctor: "DR Oya Başar",
+  },
+];
 
 export const doctorData = [
   {
     id: 1,
-    name: "Dr.Hazel Valery",
-    dep: "Cardiology",
-    img: "./img/dr1.jpg",
+    doctorName: "DR Ahmet Bilen",
+    doctorImg: "https://i.cnnturk.com/i/cnnturk/75/0x555/54857220f97adb1aa472e5e6",
   },
   {
     id: 2,
-    name: "Dr. Jasmine Carpanter",
-    dep: "Radiolgy",
-    img: "./img/dr2.jpg",
+    doctorName: "DR Ayse Okur",
+    doctorImg: "https://i3.posta.com.tr/i/posta/75/750x0/616f757845d2a0b25401f0e1",
   },
   {
     id: 3,
-    name: "Dr. Arianna Mary",
-    dep: "Orthopedy",
-    img: "./img/dr3.jpg",
+    doctorName: "DR Fatma Adil",
+    doctorImg:
+      "https://i4.hurimg.com/i/hurriyet/75/0x0/5efd779645d2a04258b8f1cc.jpg",
   },
   {
     id: 4,
-    name: "Dr. Jessica White",
-    dep: "Gastroentogoly",
-    img: "./img/dr4.jpg",
+    doctorName: "DR Oya Başar",
+    doctorImg:
+      "https://im.haberturk.com/2019/09/12/2521591_720f96f71c734286b9c93122b8bbd70c_640x640.jpg",
   },
-  {
-    id: 5,
-    name: "Harry Coming",
-    dep: "Surgery",
-    img: "./img/dr9.jpg",
-  },
-  {
-    id: 6,
-    name: "Dr. Kristensen Abraham",
-    dep: "Neurology",
-    img: "./img/dr6.jpg",
-  },
-  {
-    id: 7,
-    name: "Dr.Asley Graham",
-    dep: "Pediatry",
-    img: "./img/dr7.jpg",
-  },
-  {
-    id: 8,
-    name: "Dr. Mary Motley",
-    dep: "Oncology",
-    img: "./img/dr8.jpg",
-  },
-]
+];
