@@ -1,10 +1,14 @@
 import './App.css'
+import Home from './pages/Home'
+import AppRouter from './router/AppRouter'
+
 
 function App() {
 
   return (
     <>
-      <h1> COHORT 19</h1>
+    <AppRouter/>
+
     </>
   )
 }
