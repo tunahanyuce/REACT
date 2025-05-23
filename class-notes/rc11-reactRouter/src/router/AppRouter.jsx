@@ -1,6 +1,6 @@
 import {createBrowserRouter, Route, RouterProvider} from "react-router-dom"
 import Home from "../pages/Home"
-import AboutUs form "../pages/AboutUs"
+import AboutUs form "../"
 
 const router=createBrowserRouter(
 [
