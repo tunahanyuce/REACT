@@ -1,20 +1,20 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home";
 import { RouterProvider } from "react-router";
 import AboutUs from "../pages/AboutUs";
 import Contact from "../pages/Contact";
 import Layout from "../pages/Layout";
 import Games from "../pages/Games";
 import Developers from "../pages/Developers";
-import Home from "./../pages/Home"
+import Home from "./../pages/Home";
+import NotFound from "../pages/NotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
-        {
-        index:true,
+      {
+        index: true,
         element: <Home />,
       },
       {
@@ -23,8 +23,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/developers",
-        element: <Developers/>,
+        element: <Developers />,
       },
+//         {
+//     path:"*",
+//     element: <NotFound/>
+//   }
     ],
   },
   {
@@ -35,8 +39,15 @@ const router = createBrowserRouter([
     path: "/contact",
     element: <Contact />,
   },
+{
+    path:"*",
+    element: <NotFound/>
+  }
+
+
 ]);
 
 export default function AppRouter() {
   return <RouterProvider router={router} />;
 }
+
