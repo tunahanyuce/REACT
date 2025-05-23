@@ -27,12 +27,19 @@ getBilgiler();
 
 },[])
 
+//! DELETE
+const deleteBilgi=async()=>{
+  await axios.delete(`${url}${id}/`)
+
+}
+
 
 
 
   return (
     <div>
-<BilgiList tutorials={tutorials}/>
+<BilgiList tutorials={tutorials} deleteBilgi={deleteBilgi} />
+<AddBilgi/>
 
     </div>
   )
