@@ -1,7 +1,8 @@
 import React from "react";
 import gameLogo from "../assets/gamevere.png";
-import "./GameNavbar.css"
-import { Link } from 'react-router-dom';
+import "./GameNavbar.css";
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 const GameNavbar = () => {
   return (
@@ -17,14 +18,30 @@ const GameNavbar = () => {
           <a href="" className="nav-link">Developers</a>
           <a href="" className="nav-link">Github</a> */}
 
-          <Link to="/"  className="nav-link">Home</Link>
-          <Link to="/games"  className="nav-link">Games</Link>
-          <Link to="/contact"  className="nav-link">Contact</Link>
-          <Link to="/developers"  className="nav-link">Developers</Link>
-        
-          <a target="_blank" href="https://github.com/bobeff/open-source-games" className="nav-link">Github</a> 
-          
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
+          <Link to="/games" className="nav-link">
+            Games
+          </Link>
+          <Link to="/contact" className="nav-link">
+            Contact
+          </Link>
+          <Link to="/developers" className="nav-link">
+            Developers
+          </Link>
 
+          <a
+            target="_blank"
+            href="https://github.com/bobeff/open-source-games"
+            className="nav-link"
+          >
+            Github
+          </a>
+
+          <Link to="/signin">
+            <Button variant="outline-success">Sign in</Button>
+          </Link>
         </div>
       </nav>
     </div>
@@ -33,16 +50,15 @@ const GameNavbar = () => {
 
 export default GameNavbar;
 
-
-
 //! React bootstrap gibi yapılarda Link kullanımı
 // as={Link} to="/home" yapısı ile kullanılır
- 
+
 // import Container from 'react-bootstrap/Container';
 // import Nav from 'react-bootstrap/Nav';
 // import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 // import { Link } from 'react-router-dom';
+// import { Button } from 'react-bootstrap';
 // function GameNavbar() {
 //   return (
 //     <Navbar expand="lg" className="bg-body-tertiary">

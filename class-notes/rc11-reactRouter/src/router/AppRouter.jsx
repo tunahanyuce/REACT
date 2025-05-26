@@ -8,6 +8,7 @@ import Developers from "../pages/Developers";
 import Home from "./../pages/Home";
 import NotFound from "../pages/NotFound";
 import SignIn from "../components/SigIn";
+import GameDetail from './../pages/GameDetail';
 
 const router = createBrowserRouter([
   {
@@ -26,10 +27,16 @@ const router = createBrowserRouter([
         path: "/developers",
         element: <Developers />,
       },
-//         {
-//     path:"*",
-//     element: <NotFound/>
-//   }
+
+      {
+        path:"/games/:id",
+        element: <GameDetail/>
+      }
+
+    
+
+
+
     ],
   },
   {

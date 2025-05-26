@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import { Col, Container, Row } from "react-bootstrap";
-import GameCard from "./../components/GameCard"
+import { Col, Container,Row } from "react-bootstrap";
+import GameCard from "./../components/GameCard";
 
 const Games = () => {
   const [games, setGames] = useState([]);
@@ -18,17 +18,16 @@ const Games = () => {
     getData();
   }, []);
 
-  return
-   (<Container>
-    <Row>
-      {games.map((game)=>(
-        <Col sm={1} md={3} lg={4}>
-         <GameCard game={game}/>
-        </Col>
-      ))}
-    </Row>
-   </Container>
-   )
-  }
-
+  return (
+    <Container>
+      <Row>
+        {games.map((game) => (
+          <Col sm={1} md={4} lg={3} key={game.id}>
+            <GameCard game={game} />
+          </Col>
+        ))}
+      </Row>
+    </Container>
+  );
+};
 export default Games;
