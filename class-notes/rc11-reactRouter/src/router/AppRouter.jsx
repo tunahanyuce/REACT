@@ -10,7 +10,7 @@ import NotFound from "../pages/NotFound";
 import SignIn from "../components/SigIn";
 import GameDetail from "./../pages/GameDetail";
 import DeveloperDetails from "../pages/DeveloperDetails";
-import PrivateRouter from './PrivateRouter';
+import PrivateRouter from "./PrivateRouter";
 
 const router = createBrowserRouter([
   {

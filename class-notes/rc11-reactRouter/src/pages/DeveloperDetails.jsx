@@ -1,26 +1,25 @@
-import React from 'react'
-import developers from '../helper/developers'
-import { useParams } from 'react-router-dom'
-import slugify from '../helper/Slugify'
-import { Card,Button} from 'react-bootstrap'
+import React from "react";
+import developers from "../helper/developers";
+import { useParams } from "react-router-dom";
+import slugify from "../helper/Slugify";
+import { Card, Button } from "react-bootstrap";
 
 const DeveloperDetails = () => {
-    console.log(developers)
+  console.log(developers);
 
-    const {name}=useParams()
+  const { name } = useParams();
 
-    const developer=  developers.find((dev)=>slugify(dev.name)===name)
+  const developer = developers.find((dev) => slugify(dev.name) === name);
 
-   if (!developer){
-      return <p>Loading..</p>
-    }
+  if (!developer) {
+    return <p>Loading..</p>;
+  }
 
-    
   return (
-      <Card
+    <Card
       className="text-white bg-dark m-auto shadow-lg developer-card"
       style={{
-        paddingTop:"1rem",
+        paddingTop: "1rem",
         width: "25rem",
         borderRadius: "1rem",
         transition: "transform 0.3s",
@@ -38,7 +37,9 @@ const DeveloperDetails = () => {
         }}
       />
       <Card.Body className="bg-gradient text-white rounded-bottom">
-        <Card.Title className="text-danger fw-bold">{developer.title}</Card.Title>
+        <Card.Title className="text-danger fw-bold">
+          {developer.title}
+        </Card.Title>
         <Card.Text className="text-secondary" style={{ minHeight: "80px" }}>
           {developer.bio}
         </Card.Text>
@@ -47,7 +48,7 @@ const DeveloperDetails = () => {
         </Button>
       </Card.Body>
     </Card>
-  )
-}
+  );
+};
 
-export default DeveloperDetails
+export default DeveloperDetails;
