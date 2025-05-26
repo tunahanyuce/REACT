@@ -1,8 +1,17 @@
 // src/pages/SignIn.jsx
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function SignIn() {
+  const [username,setUsername]=useState()
+
+  const navigate=useNavigate()
+
+  const handleSubmit=()=>{
+    localStorage.setItem("username",username)
+    navigate("/games")
+  }
 
   return (
     <Container
@@ -15,7 +24,7 @@ function SignIn() {
           <p className="text-secondary text-center mb-4">
             Welcome back! Please enter your username to continue.
           </p>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formUsername">
               <Form.Label className="text-light">Username</Form.Label>
               <Form.Control
@@ -23,6 +32,7 @@ function SignIn() {
                 placeholder="Enter your username"
                 className="bg-dark text-white border-secondary"
                 required
+                onChange={(e)=>setUsername(e.target.value)}
               />
             </Form.Group>
 

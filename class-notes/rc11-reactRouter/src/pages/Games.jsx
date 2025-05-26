@@ -10,7 +10,7 @@ const Games = () => {
     const { data } = await axios.get(
       "https://cors-anywhere.herokuapp.com/https://www.freetogame.com/api/games"
     );
-    console.log("games data:", data);
+  
     setGames(data);
   };
 

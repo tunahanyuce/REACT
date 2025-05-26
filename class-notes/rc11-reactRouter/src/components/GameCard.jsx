@@ -1,7 +1,7 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useNavigate } from "react-router-dom";
-import GameDetail from "../pages/GameDetail";
+import GameDetail from "../pages/GameDetail"
 
 function GameCard({ game }) {
   const { thumbnail, id, title, short_description, developer } = game;
@@ -9,10 +9,9 @@ function GameCard({ game }) {
   const navigate=useNavigate()
 
   const handleSubmit=()=>{
-    navigate(`/games/${id}`)
-    // jsx kodu sadece JSX alanında kullanabiliriz
-    //<GameDetail game={game}/>
-
+    navigate(`/games/${id}`,{state:{game}})
+    // JSX kodu sadece JSx alannda kullanabiliriz
+    // <GameDetail game={game}/>
   }
 
   return (
