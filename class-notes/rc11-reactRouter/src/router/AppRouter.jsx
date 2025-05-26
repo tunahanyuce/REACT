@@ -7,6 +7,7 @@ import Games from "../pages/Games";
 import Developers from "../pages/Developers";
 import Home from "./../pages/Home";
 import NotFound from "../pages/NotFound";
+import SignIn from "../components/SigIn";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
   {
     path: "/contact",
     element: <Contact />,
+  },
+
+  {
+    path: "/signin",
+    element: <SignIn/>,
   },
 {
     path:"*",
