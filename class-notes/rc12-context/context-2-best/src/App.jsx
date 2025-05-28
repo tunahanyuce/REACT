@@ -1,11 +1,12 @@
 
+import KullaniciProvider from "./context/KullaniciProvider";
 import GosterUsers from "./pages/GosterUsers";
 function App() {
 
   return (
-    <>
-      <h1> <GosterUsers/></h1>
-    </>
+    <KullaniciProvider>
+       <GosterUsers/>
+    </KullaniciProvider>
   )
 }
 
