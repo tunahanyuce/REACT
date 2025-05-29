@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 //! 1- context alanı açalım
 export const KullaniciContext = createContext();
@@ -10,7 +10,7 @@ const KullaniciProvider = ({ children }) => {
       .then((res) => res.json())
       .then((data) => setUsers(data));
   },[]);
-  const changeWidth=(newId)=>{
+  const changeWidth=(newId,myWidth)=>{
 
   }
 
@@ -19,5 +19,8 @@ const KullaniciProvider = ({ children }) => {
   );
 };
 //!Consuming burada yaparsak ihtiyaç duyan child larda bir daha çağırmıyoruz (opsiyonel tercih etmeyebilir, eski yoldan yani verileri çağıran sayfalara useContext yazarak devam edebilirsiniz.)(custom hooks)
-
+//! 2.yol(childlara veriyi getirmede 2.yol)
+export const useOsman=()=>{
+    return useContext(KullaniciContext)
+}
 export default KullaniciProvider;

@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import AnaUser from "./AnaUser";
-import { KullaniciContext } from "../context/KullaniciProvider";
+import { KullaniciContext, useOsman } from "../context/KullaniciProvider";
 
 const Isimler = () => {
-  const { users } = useContext(KullaniciContext);
-
+  //! 1.yolla consuming
+  // const { users } = useContext(KullaniciContext);
+  //! 2.yolda consuming
+  const { users } = useOsman();
   return (
     <div>
       {/* API den gelen verilerin ilk 4 ürün isimlerini bastır.*/}

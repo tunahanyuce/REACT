@@ -1,19 +1,17 @@
 import React from 'react'
-import {useLocation} from 'react-router-dom'
-import Navbar from './Navbar'
-const horizontalPaths = ["/","/contact"]
-const position = horizontalPaths.includes(location.pathname) ? "horizontal": "vertical"
-
+import Navbar from "./Navbar"
+import Footer from "./Footer"
+import { Outlet ,useLocation} from 'react-router-dom'
 const Layout = () => {
-    const location =useLocation()
-  return (
-    <div>
-    <Navbar>
-        <main>
-            
-        </main>
-    </Navbar>
-
+    const location = useLocation()
+    const horizontalPaths = ["/", "/contact"]
+    const position = horizontalPaths.includes(location.pathname)? "horizontal":"vertical"
+    return (<div>
+      <Navbar/>
+      <main>
+        <Outlet/>
+      </main>
+      <Footer position = {position}/>
     </div>
   )
 }

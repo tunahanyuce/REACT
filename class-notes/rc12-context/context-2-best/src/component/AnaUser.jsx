@@ -1,9 +1,12 @@
-import { useContext } from "react";
-import { KullaniciContext } from "../context/KullaniciProvider";
+// import { useContext } from "react";
+// import { KullaniciContext } from "../context/KullaniciProvider";
+
+import { useOsman } from "../context/KullaniciProvider";
+
 
 const AnaUser = () => {
-  const { users } = useContext(KullaniciContext);
-
+  // const { users,changeWidth } = useContext(KullaniciContext);
+const {users,changeWidth}= useOsman()
   return (
     <div>
       {users.map((a) => (
