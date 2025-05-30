@@ -1,16 +1,23 @@
-import FlexAndResponsive from "./components/FlexAndResponsive";
-import HoverFocus from "./components/HoverFocus";
-import SpacingAndSizing from "./components/SpacingAndSizing";
 import Typography from "./components/Typography";
+import SpacingAndSizing from "./components/SpacingAndSizing";
+import HoverFocus from "./components/HoverFocus";
+import FlexAndResponsive from "./components/FlexAndResponsive";
+import Navbar from "./components/Navbar";
+import ProfileCard from "./components/ProfileCard";
 
 function App() {
   return (
-    <h1 className="text-3xl text-center text-green-700 font-bold underline">
-      <Typography />
-      <SpacingAndSizing />
-      <HoverFocus />
-      <FlexAndResponsive />
-    </h1>
+    <>
+      <Navbar />
+      <h1 className="text-3xl text-center text-green-700 font-bold underline">
+        Hello Tailwind
+      </h1>
+      {/* <Typography /> */}
+      {/* <SpacingAndSizing /> */}
+      {/* <HoverFocus /> */}
+      {/* <FlexAndResponsive /> */}
+      <ProfileCard />
+    </>
   );
 }
 
