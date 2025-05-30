@@ -37,21 +37,20 @@ const router = createBrowserRouter([
 
       //! Private Router işlemi -Yetki kontrolü
       {
-         path: "/games/:id",
-        element: <PrivateRouter/>,
-        children:[
+        path: "/games/:id",
+        element: <PrivateRouter />,
+        children: [
           {
-            index:true,
-             element: <GameDetail />
-          }
-        ]
+            index: true,
+            element: <GameDetail />,
+          },
+        ],
       },
 
-{
-  path:"/developers/:name",
-  element:  <DeveloperDetails/>
-}
-
+      {
+        path: "/developers/:name",
+        element: <DeveloperDetails />,
+      },
     ],
   },
   {
