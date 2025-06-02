@@ -18,9 +18,20 @@ const router = createBrowserRouter([
     element: <SignIn />,
   },
   {
-    path:"/app",
-    element: <Layout/>
-  }
+    path: "/app",
+    element: <PrivateRouter />, //! Yetki kontrolü- Giriş kontrolü
+    children: [
+      {
+        element: <Layout />, //! Layout altında görülecek sayfaları tanımlıyoruz
+        children: [
+          {
+            index: true,
+            element: <Home />,
+          },
+        ],
+      },
+    ],
+  },
 ]);
 
 export default function AppRouter() {
