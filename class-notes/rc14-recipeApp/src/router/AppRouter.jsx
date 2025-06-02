@@ -1,4 +1,3 @@
-
 import {
   createBrowserRouter,
   RouterProvider,
@@ -8,19 +7,20 @@ import {
 import SignIn from "../pages/SignIn";
 import NotFound from "../pages/NotFound";
 import Details from "../pages/Details";
-
 import Home from "../pages/Home";
 import Layout from "../pages/Layout";
 import PrivateRouter from "./PrivateRouter";
-import About from './../pages/About';
+import About from "./../pages/About";
 
 const router = createBrowserRouter([
-      {
-    path: "/", // Giriş sayfası
-    element: <SignIn/>,
+  {
+    path: "/",
+    element: <SignIn />,
   },
-     
-  
+  {
+    path:"/app",
+    element: <Layout/>
+  }
 ]);
 
 export default function AppRouter() {
