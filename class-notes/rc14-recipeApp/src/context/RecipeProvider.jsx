@@ -17,12 +17,12 @@ const RecipeProvider = ({ children }) => {
   const [query, setQuery] = useState("");
   const [mealType, setMealType] = useState("");
 
-  const[error, setError] = useState(false);
+  const [error, setError] = useState(false);
+  const [food, setFood] = useState([]);
 
-  const [food,setFood]=useState([])
+  const [loading, setLoading] = useState(false);
 
-
-  const getData =async () => {
+  const getData = async () => {
     let url = "";
 
     try {
@@ -32,16 +32,21 @@ const RecipeProvider = ({ children }) => {
         url = `https://www.themealdb.com/api/json/v1/1/search.php?c=${mealType}`;
       }
 
- 
+      const { data } = await axios.get(url);
 
-      const {data}=await axios.get(url)
-
-      console.log(data)
-
+      setFood(data.meals);
+      console.log(data);
     } catch (error) {
       setError(true);
     }
   };
+
+  if (loading) {
+    return(
+    <div className="flex justify-center items-center h-24">
+      <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-blue-600"></div>
+    </div>)
+  }
 
   return (
     <RecipeContext.Provider
@@ -56,7 +61,8 @@ const RecipeProvider = ({ children }) => {
         setQuery,
         mealType,
         setMealType,
-        getData
+        getData,
+        food,
       }}
     >
       {children}
