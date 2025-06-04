@@ -1,16 +1,21 @@
-import React from 'react'
-import RecipeNavbar from 
-  import { Outlet } from 'react-router-dom'
+import React, { useContext } from "react";
+import RecipeNavbar from "./../components/RecipeNavbar";
+import { Outlet } from "react-router-dom";
+import { RecipeContext } from "../context/RecipeProvider";
 
 const Layout = () => {
+  const { darkMode, toggleDarkMode } = useContext(RecipeContext);
   return (
-    <div>
-      <RecipeNavbar/>
-      <main>
-        <Outlet/>
-      </main>
-    </div>
-  )
-}
+    <div className={darkMode ? "dark" : ""}>
+      <div className="min-h-screen ">
+        <RecipeNavbar />
 
-export default Layout
+        <main>
+          <Outlet />
+        </main>
+      </div>
+    </div>
+  );
+};
+
+export default Layout;

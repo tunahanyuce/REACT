@@ -6,6 +6,8 @@ export const RecipeContext = createContext();
 const RecipeProvider = ({ children }) => {
   const [username, setUsername] = useState(localStorage.getItem("username") || "");
   const [password, setPassword] = useState(localStorage.getItem("password") || "");
+  const [darkMode,setDarkMode]=useState(false)
+  const toggleDarkMode=()=>setDarkMode((prev)=>!prev)
 
   return(
   <RecipeContext.Provider
@@ -14,6 +16,8 @@ const RecipeProvider = ({ children }) => {
       setUsername,
       password,
       setPassword
+      darkMode,
+      toggleDarkMode
     }}
   >
     {children}
