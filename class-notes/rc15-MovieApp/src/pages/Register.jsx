@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import GoogleIcon from "../assets/icons/GoogleIcon";
 import { AuthContextt } from "../context/AuthContext";
 
@@ -8,12 +8,17 @@ const [firstName, setFirstName] = useState();
 const [lastName, setLastName] = useState();
 const [email, setEmail] = useState();
 const [password, setPassword] = useState();
+
 const {createKullanici}=useContext(AuthContextt)
 
 const handleSubmit=(e)=>{
+
   e.preventDefault()
+  const displayName=`${firstName} ${lastName}`
+createKullanici(email,password,displayName)
 
 }
+
 
   return (
     <div className="overflow-hidden flex-1 h-screen justify-center items-center bg-[#23242a]">
@@ -30,7 +35,7 @@ const handleSubmit=(e)=>{
               class=" peer"
               placeholder=" "
               required
-              onChange={(e)=>setFirstName(e.target.value)}
+              onChange={(e) => setFirstName(e.target.value)}
             />
             <label htlmFor="floating_text" className="">
               First Name
@@ -43,6 +48,7 @@ const handleSubmit=(e)=>{
               name="floating_text"
               type="text"
               required
+              onChange={(e) => setLastName(e.target.value)}
             />
             <label htmlFor="floating_text">Last Name</label>
           </div>
@@ -53,7 +59,7 @@ const handleSubmit=(e)=>{
               name="floating_email"
               type="email"
               required
-              onChange={(e)=>setFirstEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <label htmlFor="floating_email">Email</label>
           </div>
@@ -64,7 +70,7 @@ const handleSubmit=(e)=>{
               name="floating_password"
               type="password"
               required
-              onChange={(e)=>setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <label htmlFor="floating_password">Password</label>
           </div>
@@ -74,7 +80,6 @@ const handleSubmit=(e)=>{
           <button
             type="button"
             className="btn-danger flex justify-between text-center "
-           
           >
             Continue with Google
             <GoogleIcon color="currentColor" />

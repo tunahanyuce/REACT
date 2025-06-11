@@ -9,9 +9,7 @@ import { Link } from "react-router-dom";
 
 import avatar from "../assets/icons/avatar.png";
 
-
 export default function Navbar() {
-
   //tailwindui.com/components/preview adresinden navbar aldık ve navigation, mobile menu button, open, Disclosure.Panel sildik
   return (
     <>
@@ -36,7 +34,7 @@ export default function Navbar() {
                     <span className="sr-only">Open user menu</span>
                     <img
                       alt=""
-                      src={ avatar}
+                      src={avatar}
                       className="h-8 w-8 rounded-full"
                       referrerPolicy="no-referrer"
                     />
@@ -66,9 +64,7 @@ export default function Navbar() {
                   </>
 
                   <MenuItem>
-                    <span
-                      className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 cursor-pointer"
-                    >
+                    <span className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 cursor-pointer">
                       Log out
                     </span>
                   </MenuItem>
