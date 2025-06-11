@@ -2,6 +2,10 @@ import GoogleIcon from "../assets/icons/GoogleIcon";
 
 const Register = () => {
 
+const [firstName, setFirstName] = useState();
+const [lastName, setLastName] = useState();
+const [email, setEmail] = useState();
+const [password, setPassword] = useState();
 
   return (
     <div className="overflow-hidden flex-1 h-screen justify-center items-center bg-[#23242a]">

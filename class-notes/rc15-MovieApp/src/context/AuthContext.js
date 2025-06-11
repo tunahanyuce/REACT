@@ -1,9 +1,22 @@
-import React from 'react'
+import React from "react";
+import React, {create}
+import { toastSuccess } from "../helpers/ToastNotify";
 
-const AuthContext = () => {
-  return (
-    <div>AuthContext</div>
-  )
-}
+export const AuthContextt = createContext();
 
-export default AuthContext
+const AuthContext = ({ children }) => {
+  //!register
+  //!register için (sitede zincir yapılı fetch işlemi var biz burada async await i tercih ettik)
+  // https://firebase.google.com/docs/auth/web/start?hl=tr
+  const createKullanici=async()=>{
+    await createUserWithEmailAndPassword(auth, email, password)
+    toastSuccess("register işlemi başarılı")
+
+
+
+  }
+
+  return <AuthContextt.provider value={{createKullanici}}>{children}</AuthContextt.provider>;
+};
+
+export default AuthContext;
