@@ -8,9 +8,12 @@ import {
 import { Link } from "react-router-dom";
 
 import avatar from "../assets/icons/avatar.png";
+import AuthContext, { AuthContextt } from "../context/AuthContext";
 
 export default function Navbar() {
-  //tailwindui.com/components/preview adresinden navbar aldık ve navigation, mobile menu button, open, Disclosure.Panel sildik
+
+  const {cikis}=useContext(AuthContextt)
+    //tailwindui.com/components/preview adresinden navbar aldık ve navigation, mobile menu button, open, Disclosure.Panel sildik.
   return (
     <>
       <Disclosure
