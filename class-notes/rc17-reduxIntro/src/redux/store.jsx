@@ -7,7 +7,7 @@ import todoReducer from "./reducers/todoReducer";
 
     const topluReducer= combineReducers({
         counterReducer= counterReducer
-        todoReducer:todoReducer
+        todoReducer: todoReducer
 
 })
 
