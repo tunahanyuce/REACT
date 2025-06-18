@@ -1,14 +1,8 @@
-
-
-
-
 const TodoList = () => {
-
-
   return (
     <div>
-    todolist
-    {/* diziyi bastırmak için todoItem a git */}
+      {/* diziyi bastırmak için todoItem a git */}
+      <div></div>
     </div>
   );
 };
