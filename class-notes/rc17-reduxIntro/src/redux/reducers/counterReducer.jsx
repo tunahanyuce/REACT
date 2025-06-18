@@ -1,16 +1,20 @@
 //mutfak
 
 const counterReducer = (
-  state = { sayaç: 0, yazi: "basliyor" },
+  state = { sayac: 0, yazi: "basliyor" },
   { type, payload1 }
 ) => {
-  switch (type) {
+
+switch (type) {
     case "INCREASE":
-      return;
+        return 
+     
 
     default:
-      return state;
-  }
+     return  state
+}
+
+
 };
 
 export default counterReducer;
