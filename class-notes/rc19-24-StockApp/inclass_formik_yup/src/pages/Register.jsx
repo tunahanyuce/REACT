@@ -45,46 +45,111 @@ const Register = () => {
             Register
           </Typography>
           <Formik>
-            initialValues={{username:"",firstName:"",lastName:"",email:"",password:""}}
-             validate={values => {
-         const errors = {};
-         if (!values.email) {
-           errors.email = 'Required';
-         } else if (
-           !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-         ) {
-           errors.email = 'Invalid email address';
-         }
-         return errors;
-          }}
-          onSubmit={(values)=>{
-            console.log(values)
-          }}
-          >
-          {({values,handleSubmit,errors})=>(
-            <form action="">
-            <TextField
-            fullWidth
-              name="username"
-                onChange={handleChange}
-                handleBlur={handleBlur}
-                variant="outlined"
-                type="text"
-              />
-              <button type="submit" fullWidth variant="contained" sx={{mt:2}}>Register</button>
-
-            </form>
-          )
-
-          }
+            initialValues=
+            {{
+              username: "",
+              firstName: "",
+              lastName: "",
+              email: "",
+              password: "",
+            }}
+            validate=
+            {(values) => {
+              const errors = {};
+              if (!values.email) {
+                errors.email = "Required";
+              } else if (
+                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+              ) {
+                errors.email = "Invalid email address";
+              }
+              return errors;
+            }}
+            onSubmit=
+            {(values) => {
+              console.log(values);
+            }}
+            >
+            {({ values, handleSubmit, errors }) => (
+              <form action="">
+                <TextField
+                  fullWidth
+                  name="username"
+                  label="username"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  variant="outlined"
+                  type="text"
+                  calue={values.username}
+                  error={touched.username && Boolean(errors.username)}
+                  helperText={touched.username && Boolean(errors.username)}
+                />
+                <TextField
+                  fullWidth
+                  name="firstname"
+                  label="firstname"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  variant="outlined"
+                  type="text"
+                  calue={values.firstname}
+                  error={touched.firstname && Boolean(errors.firstNamename)}
+                  helperText={touched.firstname && Boolean(errorsfirstName)}
+                />
+                <TextField
+                  fullWidth
+                  name="lastname"
+                  label="lastname"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  variant="outlined"
+                  type="text"
+                  calue={values.lastname}
+                  error={touched.lastname && Boolean(errorslastname)}
+                  helperText={touched.lastname && Boolean(errors.lastname)}
+                />
+                <TextField
+                  fullWidth
+                  name="email"
+                  label="email"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  variant="outlined"
+                  type="text"
+                  calue={values.email}
+                  error={touched.email && Boolean(errors.email)}
+                  helperText={touched.email && Boolean(errors.email)}
+                />
+                <TextField
+                  fullWidth
+                  name="password"
+                  label="password"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  variant="outlined"
+                  type="text"
+                  calue={values.password}
+                  error={touched.password && Boolean(errors.password)}
+                  helperText={touched.password && Boolean(errors.password)}
+                />
+                <button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  sx={{ mt: 2 }}
+                >
+                  Register
+                </button>
+              </form>
+            )}
           </Formik>
 
-          <Box sx={{ textAlign: "center", mt: 2, color:"secondary.main" }}>
+          <Box sx={{ textAlign: "center", mt: 2, color: "secondary.main" }}>
             <Link to="/">Already have an account? Sign in</Link>
           </Box>
         </Grid>
 
-    <AuthImage image={image} />
+        <AuthImage image={image} />
       </Grid>
     </Container>
   );
