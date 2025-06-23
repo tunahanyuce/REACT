@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { Box } from "@mui/material";
 import AuthHeader from "../components/AuthHeader";
 import AuthImage from "../components/AuthImage";
+import Login from "./Login";
 
 const Register = () => {
   return (
@@ -45,6 +46,28 @@ const Register = () => {
           </Typography>
           <Formik>
             initialValues={{username:"",firstName:"",lastName:"",email:"",password:""}}
+             validate={values => {
+         const errors = {};
+         if (!values.email) {
+           errors.email = 'Required';
+         } else if (
+           !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+         ) {
+           errors.email = 'Invalid email address';
+         }
+         return errors;
+          }}
+          onSubmit={(values)=>{
+            console.log(values)
+          }}
+          >
+          {({values,handleSubmit,errors})=>(
+            <form>
+
+            </form>
+          )
+
+          }
           </Formik>
 
           <Box sx={{ textAlign: "center", mt: 2, color:"secondary.main" }}>
