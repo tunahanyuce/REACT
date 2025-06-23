@@ -43,6 +43,9 @@ const Register = () => {
           >
             Register
           </Typography>
+          <Formik>
+            initialValues={{username:"",firstName:"",lastName:"",email:"",password:""}}
+          </Formik>
 
           <Box sx={{ textAlign: "center", mt: 2, color:"secondary.main" }}>
             <Link to="/">Already have an account? Sign in</Link>
