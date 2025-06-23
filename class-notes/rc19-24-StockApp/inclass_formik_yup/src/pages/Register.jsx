@@ -5,7 +5,7 @@ import LockIcon from "@mui/icons-material/Lock";
 import image from "../assets/regi.avif";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
-import { Box } from "@mui/material";
+import { Box, TextField, Button } from "@mui/material";
 import AuthHeader from "../components/AuthHeader";
 import AuthImage from "../components/AuthImage";
 import Login from "./Login";
@@ -62,7 +62,16 @@ const Register = () => {
           }}
           >
           {({values,handleSubmit,errors})=>(
-            <form>
+            <form action="">
+            <TextField
+            fullWidth
+              name="username"
+                onChange={handleChange}
+                handleBlur={handleBlur}
+                variant="outlined"
+                type="text"
+              />
+              <button type="submit" fullWidth variant="contained" sx={{mt:2}}>Register</button>
 
             </form>
           )
