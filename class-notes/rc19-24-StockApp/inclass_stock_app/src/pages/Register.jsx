@@ -12,9 +12,12 @@ import AuthImage from "../components/AuthImage";
 import { Formik } from "formik";
 import *  as Yup  from "yup"
 import RegisterForm from "../components/RegisterForm";
+import useAuthCall from "../hook/useAuthCall";
 
  
 const Register = () => {
+
+  const {register}=useAuthCall()
 
  const registerSchema = Yup.object().shape({
 
@@ -78,8 +81,8 @@ const Register = () => {
          
           validationSchema={registerSchema}
 
-          onSubmit={(values)=>(
-          console.log(values))}
+          onSubmit={(values)=>(register(values))
+        }
 
           component={(props)=>( <RegisterForm  {...props}/> )}
 
