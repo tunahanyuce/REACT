@@ -22,6 +22,8 @@ const useAuthCall = () => {
   const navigate = useNavigate();
   const { token } = useSelector((state) => state.auth);
 
+   const BASE_URL=import.meta.env.VITE_BASE_URL
+
   //!    REGISTER ISLEMİ
 
   const register = async (userInfo) => {
@@ -29,7 +31,7 @@ const useAuthCall = () => {
 
     try {
       const { data } = await axios.post(
-        "https://10004.fullstack.clarusway.com/users",
+        `${BASE_URL}/users`,
         userInfo
       );
       console.log("data", data);
@@ -46,7 +48,7 @@ const login = async (userInfo) => {
     dispatch(fetchStart());
     try {
       const { data } = await axios.post(
-        "https://10004.fullstack.clarusway.com/auth/login",userInfo
+        `${BASE_URL}auth/login`,userInfo
      
       );
       console.log(data);  
@@ -73,7 +75,7 @@ const login = async (userInfo) => {
     dispatch(fetchStart());
     try {
       const { data } = await axios.get(
-        "https://10004.fullstack.clarusway.com/auth/logout",
+        `${BASE_URL}/auth/logout`,
         {
           headers: {
             Authorization: `Token ${token}`,
