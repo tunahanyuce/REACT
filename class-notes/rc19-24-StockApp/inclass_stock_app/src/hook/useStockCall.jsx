@@ -2,12 +2,23 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { fetchFail, fetchStart } from '../features/authSlice'
 import { useSelector } from 'react-redux'
+import useAxios from './useAxios'
 
 const useStockCall = () => {
 
     const dispatch=useDispatch()
     const BASE_URL=import.meta.env.VITE_BASE_URL
     const {token}=useSelector((state)=>state.auth)
+    const {axiosWithToken}=useAxios()
+    const getData=async(url)=>{
+        dispatch(fetchStart())
+        try {
+            const{data}=await axiosWithToken.get(`${url}`)
+            console.log(data);
+            dispatch
+            
+        }
+    }
 
 
     const getFirms=async()=>{
