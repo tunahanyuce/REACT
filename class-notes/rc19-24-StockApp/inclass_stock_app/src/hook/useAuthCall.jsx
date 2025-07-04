@@ -51,8 +51,8 @@ const login = async (userInfo) => {
         `${BASE_URL}auth/login`,userInfo
      
       );
-      console.log(data);  
-      dispatch(loginSuccess(userInfo))  
+      console.log();  
+      dispatch(loginSuccess(data))  
       navigate("/stock");
     } catch (error) {
       dispatch(fetchFail());
@@ -61,21 +61,13 @@ const login = async (userInfo) => {
 
 
 
-
-
-
-
-
-
-
-
   //!    LOGOUT ISLEMİ
 
   const logout = async () => {
     dispatch(fetchStart());
     try {
-      const { data } = await axios.get(
-        `${BASE_URL}/auth/logout`,
+      const { data } = await axios(
+        `${BASE_URL}auth/logout/`,
         {
           headers: {
             Authorization: `Token ${token}`,

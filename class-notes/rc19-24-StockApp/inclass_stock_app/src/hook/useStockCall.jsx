@@ -1,46 +1,66 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import { fetchFail, fetchStart } from '../features/authSlice'
-import { useSelector } from 'react-redux'
-import useAxios from './useAxios'
+import React from "react";
+import { useDispatch } from "react-redux";
+
+import { useSelector } from "react-redux";
+import axios from "axios";
+import { fetchFail, fetchStart, stockSuccess } from "../features/StockSlice";
+import useAxios from "./useAxios";
 
 const useStockCall = () => {
+  const dispatch = useDispatch();
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
+  const { token } = useSelector((state) => state.auth);
+  const { axiosWithToken } = useAxios();
 
-    const dispatch=useDispatch()
-    const BASE_URL=import.meta.env.VITE_BASE_URL
-    const {token}=useSelector((state)=>state.auth)
-    const {axiosWithToken}=useAxios()
-    const getData=async(url)=>{
-        dispatch(fetchStart())
-        try {
-            const{data}=await axiosWithToken.get(`${url}`)
-            console.log(data);
-            dispatch
-            
-        }
+  const getData = async (url) => {
+    dispatch(fetchStart());
+    try {
+      const { data } = await axiosWithToken.get(`${url}`);
+      console.log(data);
+      dispatch(stockSuccess({data,url}));
+    } catch (error) {
+      dispatch(fetchFail());
     }
+  };
 
+  const createStockData = async (url, info) => {
+    dispatch(fetchStart());
 
-    const getFirms=async()=>{
-        dispatch(fetchStart())
+    try {
+      const { data } = await axiosWithToken.post(url, info);
 
-        try {
-
-            const {data} = await axios.get(`${BASE_URL}firms`,{
-                headers:{
-                    Authorization:`Token ${token}`
-                }
-            })
-            
-            console.log(data)
-            
-        } catch (error) {
-            dispatch(fetchFail())
-            console.log(error)
-        }
+      getData(url);
+    } catch (error) {
+      dispatch(fetchFail());
     }
+  };
 
-  return  {getFirms}
-}
+  const updateStockData = async (url, info) => {
+    dispatch(fetchStart());
 
-export default useStockCall
+    try {
+      const { data } = await axiosWithToken.put(`${url}/${info._id}`, info);
+
+      getData(url);
+    } catch (error) {
+      dispatch(fetchFail());
+    }
+  };
+
+
+  const deleteStockData = async (url, id) => {
+    dispatch(fetchStart());
+
+    try {
+      const { data } = await axiosWithToken.delete(`${url}/${id}`);
+
+      getData(url);
+    } catch (error) {
+      dispatch(fetchFail());
+    }
+  };
+
+  return { getData, createStockData,updateStockData ,deleteStockData};
+};
+
+export default useStockCall;
